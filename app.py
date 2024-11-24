@@ -2,7 +2,7 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# HTML Templates as Strings
+# Base Template
 base_template = """
 <!DOCTYPE html>
 <html lang="en">
@@ -61,16 +61,18 @@ base_template = """
 </html>
 """
 
+# Home Template
 home_template = """
-{% extends "base_template" %}
+{% extends base_template %}
 {% block content %}
 <h1>Welcome to Takshashala</h1>
 <p>Your one-stop solution for everything.</p>
 {% endblock %}
 """
 
+# About Template
 about_template = """
-{% extends "base_template" %}
+{% extends base_template %}
 {% block content %}
 <h1>About Takshashala</h1>
 <p>Takshashala is dedicated to providing solutions to all your needs.</p>
